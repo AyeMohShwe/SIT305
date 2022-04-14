@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/prev_rec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="You spent 00:00 on ... last time."
+        android:textColor="#FF5722"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/timer_rec"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/timer_rec"
+        android:layout_width="match_parent"
+        android:layout_height="106dp"
+        android:gravity="center"
+        android:text="00:00"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prev_rec" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timer_rec">
+
+        <ImageButton
+            android:id="@+id/startBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/black"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/play_button" />
+
+        <ImageButton
+            android:id="@+id/pauseBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/black"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/pause" />
+
+        <ImageButton
+            android:id="@+id/stopBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/black"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/stop_button" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="115dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/taskView"
+            android:layout_width="120dp"
+            android:layout_height="47dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="Enter your task:"
+            android:textColor="#FF5722"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/user_Input"
+            android:layout_width="174dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#F44782"
+            android:ems="10"
+            android:fontFamily="sans-serif-black"
+            android:inputType="textPersonName"
+            android:textColor="#00BCD4" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
